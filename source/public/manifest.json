@@ -1,0 +1,11 @@
+{
+  "name": "QUOTIFY — AI Quote Generator",
+  "short_name": "QUOTIFY",
+  "description": "Discover, create, save and design original inspirational quotes.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#070c14",
+  "theme_color": "#07111f",
+  "icons": []
+}

@@ -1,0 +1,93 @@
+[
+  {
+    "name": "Generate original quotes by category and save a favourite",
+    "sanity": true,
+    "viewport": "desktop",
+    "covers": [
+      "AI quote generation",
+      "category selection",
+      "rendered quote results",
+      "favourite saving",
+      "local persistence"
+    ],
+    "description": "Verifies a category request returns usable original quotes and a favourite remains saved after refresh.",
+    "steps": [
+      "Choose the Motivation category",
+      "Generate quotes",
+      "Save one result as a favourite",
+      "Refresh the page and open Saved"
+    ],
+    "expected": "Generated quote cards appear and the selected favourite is still present in Saved after refresh."
+  },
+  {
+    "name": "Browse and search the imported classic quote archive",
+    "viewport": "desktop",
+    "covers": [
+      "all 37 imported quotes",
+      "source and citation preservation",
+      "classic quote search",
+      "classic quote saving",
+      "classic quote design export"
+    ],
+    "description": "Verifies the uploaded quote collection is present, searchable, and its attribution metadata remains available when saved or designed.",
+    "steps": [
+      "Scroll to Classic quote archive",
+      "Search for Terry Pratchett",
+      "Confirm matching quotes show their citation details",
+      "Save one quote and open its design studio"
+    ],
+    "expected": "Matching imported quotes appear with their original source and citation details, and the selected quote can be saved and opened in the design studio."
+  },
+  {
+    "name": "Generate quotes from a custom topic and recover from invalid input",
+    "viewport": "desktop",
+    "covers": [
+      "keyword generation",
+      "input validation",
+      "visible generation errors"
+    ],
+    "description": "Verifies custom topics generate relevant quotes and invalid input is rejected with clear feedback.",
+    "steps": [
+      "Enter the topic 'learning from failure'",
+      "Generate quotes and inspect the results",
+      "Enter more than 100 characters and submit again"
+    ],
+    "expected": "Quotes relevant to the topic appear; overlong input shows validation feedback without clearing existing results."
+  },
+  {
+    "name": "Customize a quote design and export an image",
+    "viewport": "desktop",
+    "covers": [
+      "quote design editor",
+      "template selection",
+      "visual customization",
+      "PNG export",
+      "citation and year display"
+    ],
+    "description": "Verifies the editor updates the preview and produces a downloadable quote image with its available attribution.",
+    "steps": [
+      "Open the design studio for a quote",
+      "Choose a visual theme and change the text colour",
+      "Download the design as PNG"
+    ],
+    "expected": "The preview reflects the selected design settings and a PNG download is initiated with the available author, citation and year credit."
+  },
+  {
+    "name": "Use the quote generator on a mobile viewport",
+    "viewport": "mobile",
+    "covers": [
+      "responsive mobile layout",
+      "mobile quote generation",
+      "copy and share actions",
+      "mobile classic archive search"
+    ],
+    "description": "Verifies the generation and classic archive search flows remain usable on a narrow screen.",
+    "steps": [
+      "Open the generator on a mobile viewport",
+      "Generate a quote using the Success category",
+      "Search the classic archive for 'Roosevelt'",
+      "Copy a generated quote"
+    ],
+    "expected": "The interface fits the mobile viewport, archive search remains usable, results are readable, and copy provides confirmation."
+  }
+]
