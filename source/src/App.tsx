@@ -1,5 +1,4 @@
 import { useEffect, useMemo, useState } from 'react';
-import { api } from '@appdeploy/client';
 import { legacyQuotes } from './legacyQuotes';
 import {
   ArrowDownToLine,
@@ -117,12 +116,20 @@ function App() {
     setLoading(true);
     setError('');
     try {
-      const response = await api.post('/api/quotes/generate', {
-        category,
-        topic: topic.trim(),
-        length,
+      const response = await fetch('/api/quotes/generate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          category,
+          topic: topic.trim(),
+          length,
+        }),
       });
-      const items = response.data?.quotes as
+      const data = await response.json();
+      if (!response.ok) {
+        throw new Error(data?.error || 'Could not generate quotes. Please try again.');
+      }
+      const items = data?.quotes as
         | Array<{ text: string; author?: string }>
         | undefined;
       if (!Array.isArray(items) || items.length === 0)
